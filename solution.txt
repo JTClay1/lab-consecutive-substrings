@@ -1,2 +1,13 @@
-Please add your pseudocode to this file
+Please add your pseudocode to this file:
+
+Function getConsecutiveSubstrings(string):
+    Create empty array to store results
+    If string length is 0, return empty array
+    For each starting position from 0 to string length - 1:
+        For each length from 1 to string length - starting position:
+            Extract substring from starting position with current length
+            Add substring to results array
+    Return results array
+
 And a written explanation of your solution
+The function getConsecutiveSubstrings is designed to generate and return all consecutive substrings from a given input string by initializing an empty array to store the results and handling the edge case of an empty string by returning the array immediately if the string length is 0. Then it uses a nested iteration approach where the outer loop iterates over each character position in the string as a starting point (from index 0 to the second to last index). And the inner loop determines the length of the substring to extract, ranging from 1 to the max possible length that doesn't exceed the remaining characters (string length minus the starting spot), ensuring all consecutive substrings are The getConsecutiveSubstrings function is designed to generate and return all possible consecutive substrings from a given input string by first initializing an empty array to store the results and handling the edge case of an empty string by returning the array immediately if the string length is 0; it then uses a nested iteration approach where the outer loop iterates over each character position in the string as a starting point (from index 0 to the second-to-last index), and the inner loop determines the length of the substring to extract, ranging from 1 to the maximum possible length that doesn’t exceed the remaining characters (string length minus the starting position), ensuring all consecutive substrings are considered. For each combination of starting position and length, the slice method extracts the substring from the starting position up to the starting position plus the current length, adding it to the results array, and once all possible consecutive substrings are generated and stored, the function returns the complete results array, which contains all substrings in the order they appear in the original string. This solution effectively includes all consecutive substrings (e.g., "a", "ab", "abc" for "abc") while naturally excluding non-consecutive combinations (e.g., "ac") due to the consecutive slicing process, with a time complexity of O(n²) due to the nested loops and a space complexity of O(n²) to store all resulting substrings
